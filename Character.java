@@ -2,6 +2,7 @@
 import java.util.arraylist;
 
 /**
+ * Check
  * Character details
  * @author Kelvin Wang
  * @version 1.1
