@@ -1,11 +1,23 @@
 public class Magic 
-2 { 
-3   private String name; 
-4   private String description; 
-5    
-6   public Magic(String n, String d) 
-7   { 
-8     name = n; 
-9     description = d; 
-10     } 
-11     } 
+{
+  private String name; 
+  private String description; 
+    
+  public Magic(String n, String d) 
+  { 
+     name = n; 
+     description = d; 
+  }
+  public String getName()
+  {
+    return name;
+  }
+  public String getDescription()
+  {
+    return description;
+  }
+  public void battleMagic(Character character)
+  {
+    character
+  }
+} 
