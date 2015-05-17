@@ -7,27 +7,50 @@
  */
 public class Weapon
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Weapon
-     */
-    public Weapon()
+    private String name;
+    private int attackBonus;
+    private Magic magic;
+    private String description;
+    private boolean ranged;
+    private int intelligenceReq;
+    private int defenseBonus;
+    
+    public Weapon(String newName, String desc, int atkBonus, int defBonus, Magic mag, boolean range, int intel )
     {
-        // initialise instance variables
-        x = 0;
+        name = newName;
+        description = desc;
+        attackBonus = atkBonus;
+        defenseBonus = defBonus;
+        magic = mag;
+        ranged = range;
+        intelligenceReq = intel;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public int getAttack()
     {
-        // put your code here
-        return x + y;
+        return attackBonus;
+    }
+    public Magic getMagic()
+    {
+        return magic;
+    }
+    public String getDescription()
+    {
+        return description;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public boolean getRange()
+    {
+        return ranged
+    }
+    public int getIntelligenceReq()
+    {
+        return intelligenceReq;
+    }
+    public int getDefense()
+    {
+        return defense;
     }
 }
