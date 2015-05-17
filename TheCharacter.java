@@ -13,7 +13,7 @@ public class TheCharacter
 {
 
     // instance variables - replace the example below with your own
-
+    private String name = "";
     private int health = 100;
 
     private int attack = 0;
@@ -37,8 +37,10 @@ public class TheCharacter
     /**
      * Constructor for objects of class Character
      */
-    public Character(int a, int d, int m, int s, int i)
+    public Character(String n, int h, int a, int d, int m, int s, int i)
     {
+        name = n;
+        health = h;
         attack = a;
         defense = d;
         magic = m;
@@ -52,7 +54,14 @@ public class TheCharacter
      * @param  y   a sample parameter for a method
      * @return     the sum of x and y 
      */
-
+    public String getName()
+    {
+        return name;
+    }
+    public int getHealth()
+    {
+        return health;
+    }
     public int getAttack()
 
     {
@@ -92,7 +101,10 @@ public class TheCharacter
         return intelligence;
 
     }
-
+    public void setHealth(int newHealth)
+    {
+        health = newHealth;
+    }
     public void setAttack(int newAttack)
 
     {
@@ -151,4 +163,19 @@ public class TheCharacter
             System.out.println(magic.get(i).getName()+": "+magic.get(i).getDescription());
         }
     }
-    public boolean battle(TheCharacter char1, TheCharacter)
+    public boolean battle(TheCharacter opponent)
+    {
+        System.out.println();
+        System.out.printf("%-30s|",name);
+        System.out.printf("%30s", opponent.getName());
+        System.out.println();
+        System.out.printf("-------------------------------------------------------------");
+        System.out.println();
+        System.out.printf("%-30s|","Attack:"+attack);
+        System.out.printf("%30s", "Attack:"+opponent.getAttack());
+        System.out.println();
+        System.out.printf("%-30s|","Defense:"+defense);
+        System.out.printf("%30s", "Defense:"+opponent.getDefense());
+    }
+}
+    }
