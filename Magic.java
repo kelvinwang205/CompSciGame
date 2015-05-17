@@ -16,7 +16,7 @@ public class Magic
   {
     return description;
   }
-  public void battleMagic(Character character)
+  public void battleMagic(TheCharacter character)
   {
     character
   }
