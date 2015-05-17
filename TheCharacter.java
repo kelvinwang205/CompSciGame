@@ -145,7 +145,7 @@ public class TheCharacter
         {
             System.out.println(itemInventory[i].getName()+": "+itemInventory[i].getDescription());
         }
-        System.out.println("Magic:")
+        System.out.printf("Magic:\n")
         for(int i = 0; i<magic.size(); i++ )
         {
             System.out.println(magic.get(i).getName()+": "+magic.get(i).getDescription());
