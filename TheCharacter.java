@@ -1,5 +1,5 @@
-
-import java.util.arraylist;
+import java.util.Scanner;
+import java.util.Arraylist;
 
 /**
  * Check
@@ -30,7 +30,7 @@ public class TheCharacter
 
     Item[] itemInventory = new Item[10];
 
-    Arraylist<Magic> magic = new Arraylist<>;
+    Arraylist<Magic> magicList = new Arraylist<>;
 
     Potion[] potionBelt = new Potion[3];
 
@@ -158,24 +158,49 @@ public class TheCharacter
             System.out.println(itemInventory[i].getName()+": "+itemInventory[i].getDescription());
         }
         System.out.printf("Magic:\n")
-        for(int i = 0; i<magic.size(); i++ )
+        for(int i = 0; i<magicList.size(); i++ )
         {
-            System.out.println(magic.get(i).getName()+": "+magic.get(i).getDescription());
+            System.out.println(magicList.get(i).getName()+": "+magicList.get(i).getDescription());
         }
     }
     public boolean battle(TheCharacter opponent)
     {
-        System.out.println();
+        Scanner in = new Scanner(System.in);
+        boolean end = false;
+        System.out.printf(name+" vs "+opponent.getName()"\nThe battle has begun!");
+        while(end == false)
+        {
         System.out.printf("%-30s|",name);
         System.out.printf("%30s", opponent.getName());
         System.out.println();
         System.out.printf("-------------------------------------------------------------");
+        System.out.println();
+        System.out.printf("%-30s|","Health:"+health);
+        System.out.printf("%30s", "Health:"+opponent.getHealth());
         System.out.println();
         System.out.printf("%-30s|","Attack:"+attack);
         System.out.printf("%30s", "Attack:"+opponent.getAttack());
         System.out.println();
         System.out.printf("%-30s|","Defense:"+defense);
         System.out.printf("%30s", "Defense:"+opponent.getDefense());
+        System.out.println();
+        System.out.printf("%-30s|","Magic:"+magic);
+        System.out.printf("%30s", "Magic:"+opponent.getMagic());
+        System.out.println();
+        System.out.printf("%-30s|","Speed:"+speed);
+        System.out.printf("%30s", "Speed:"+opponent.getSpeed());
+        System.out.println();
+        System.out.printf("%-30s|","Intelligence:"+intelligence);
+        System.out.printf("%30s", "Intelligence:"+opponent.getIntelligence());
+        System.out.println("What would you like to do?\n1. Attack\n2. Magic\n3. Potion/Item\n4. Run")
+        int answer = in.nextInt();
+        System.out.print('u000c');
+        if(answer = 1)
+        {
+            System.out.prin
+            
+        }
+        }
     }
 }
     }
