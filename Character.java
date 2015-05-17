@@ -133,14 +133,20 @@ public class Character
 
     }
 
-    public void displayItems()
+    public void displayInventory()
 
     {
+        System.out.printf("Weapon:"+weapon.getName()+"\n");
+        System.out.printf("Description:"+weapon.getDescription()+"\n");
+        System.out.printf("Ranged:"+weapon.getRange()+"\n");
+        System.out.printf("Items:\n")
 
-        for
-
-        public Weapon getItem(int index)
-
+        for(int i = 0; i<itemInventory.length; i++ )
         {
-
+            System.out.println(itemInventory[i].getName()+": "+itemInventory[i].getDescription());
         }
+        System.out.println("Magic:")
+        {
+            System.out.println(magic.get(i).getName()+": "+magic.get(i).getDescription());
+        }
+    }
