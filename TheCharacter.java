@@ -197,7 +197,11 @@ public class TheCharacter
         System.out.print('u000c');
         if(answer = 1)
         {
-            System.out.prin
+            System.out.printf(name+" used "+weapon.getName()+"!\n");
+            if(10>attack-opponent.getDefense())
+            {
+                System.out.println("It's not very effective...")
+            }
             
         }
         }
