@@ -14,7 +14,8 @@ public class TheCharacter
 
     // instance variables - replace the example below with your own
     private String name = "";
-    private int health = 100;
+    
+    private int health = 0;
 
     private int attack = 0;
 
@@ -202,6 +203,7 @@ public class TheCharacter
             {
                 System.out.println("It's not very effective...")
             }
+            
             
         }
         }
