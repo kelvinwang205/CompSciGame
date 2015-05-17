@@ -8,7 +8,7 @@ import java.util.arraylist;
  * @version 1.1
  */
 
-public class Character
+public class TheCharacter
 
 {
 
@@ -146,7 +146,9 @@ public class Character
             System.out.println(itemInventory[i].getName()+": "+itemInventory[i].getDescription());
         }
         System.out.println("Magic:")
+        for(int i = 0; i<magic.size(); i++ )
         {
             System.out.println(magic.get(i).getName()+": "+magic.get(i).getDescription());
         }
     }
+    public boolean battle(TheCharacter char1, TheCharacter)
