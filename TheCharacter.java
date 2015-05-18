@@ -203,8 +203,14 @@ public class TheCharacter
             {
                 System.out.println("It's not very effective...")
             }
-            
-            
+            else if(70>attack-opponent.getDefense())
+            {
+                System.out.println("The attack worked")
+            }
+            else
+            {
+                System.out.println("It's extremely effective!")
+            }
         }
         }
     }
