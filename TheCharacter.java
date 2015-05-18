@@ -196,7 +196,7 @@ public class TheCharacter
         System.out.println("What would you like to do?\n1. Attack\n2. Magic\n3. Potion/Item\n4. Run")
         int answer = in.nextInt();
         System.out.print('u000c');
-        if(answer = 1)
+        if(answer == 1)
         {
             System.out.printf(name+" used "+weapon.getName()+"!\n");
             if(10>attack-opponent.getDefense())
@@ -211,6 +211,42 @@ public class TheCharacter
             {
                 System.out.println("It's extremely effective!")
             }
+        }
+        if(answer == 2)
+        {
+            System.out.printf(name+" used "+magic.getName()+"!\n");
+            if(10>attack-opponent.getDefense())
+            {
+                System.out.println("It's not very effective...")
+            }
+            else if(70>attack-opponent.getDefense())
+            {
+                System.out.println("The attack worked")
+            }
+            else
+            {
+                System.out.println("It's extremely effective!")
+            }
+        }
+        if(answer == 3)
+        {
+            System.out.printf(name+" used "+item.getName()+"!\n");
+            if(10>attack-opponent.getDefense())
+            {
+                System.out.println("It's not very effective...")
+            }
+            else if(70>attack-opponent.getDefense())
+            {
+                System.out.println("The attack worked")
+            }
+            else
+            {
+                System.out.println("It's extremely effective!")
+            }
+        }
+        if(answer == 4)
+        {
+            System.out.println("You ran away");
         }
         }
     }
