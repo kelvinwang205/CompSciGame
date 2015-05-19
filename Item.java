@@ -2,12 +2,10 @@ public class Item
 {
   private String name;
   private String description;
-  private int effect;
   
-  public Item(String n, String d, int e){
+  public Item(String n, String d){
     name=n;
     description=d;
-    effect=e;
   }
   
   public String getName(){
@@ -18,9 +16,5 @@ public class Item
     return description;
   }
   
-  public getEffect()
-  {
-    return effect;
-  }
   }
 }
