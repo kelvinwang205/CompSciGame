@@ -2,6 +2,7 @@ public class Item
 {
   private String name;
   private String description;
+  private int effect;
   
   public Item(String n, String d, int e){
     name=n;
@@ -15,5 +16,11 @@ public class Item
   
   public String getDescription(){
     return description;
+  }
+  
+  public getEffect()
+  {
+    return effect;
+  }
   }
 }
