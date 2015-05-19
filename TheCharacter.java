@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Arraylist;
 
 /**
@@ -16,6 +15,8 @@ public class TheCharacter
     private String name = "";
     
     private int health = 0;
+    
+    private int currentHealth;
 
     private int attack = 0;
 
@@ -29,7 +30,7 @@ public class TheCharacter
 
     Weapon weapon;
 
-    Item[] itemInventory = new Item[10];
+    Item[] itemList = {new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),};
 
     Arraylist<Magic> magicList = new Arraylist<>;
 
@@ -38,15 +39,17 @@ public class TheCharacter
     /**
      * Constructor for objects of class Character
      */
-    public Character(String n, int h, int a, int d, int m, int s, int i)
+    public Character(String n, int h, int a, int d, int m, int s, int i, Weapon newWeapon)
     {
         name = n;
         health = h;
-        attack = a;
-        defense = d;
+        attack = a + newWeapon.getAttackBonus();
+        defense = d + newWeapon.getDefenseBonus();
         magic = m;
         speed = s;
         intelligence = i;
+        currentHealth = h;
+        magicList.add(newWeapon.magic());
     }
 
     /**
@@ -164,91 +167,42 @@ public class TheCharacter
             System.out.println(magicList.get(i).getName()+": "+magicList.get(i).getDescription());
         }
     }
-    public boolean battle(TheCharacter opponent)
+    public void replaceWeapon(Weapon newWeapon)//magicList must have a Magic object already
     {
-        Scanner in = new Scanner(System.in);
-        boolean end = false;
-        System.out.printf(name+" vs "+opponent.getName()"\nThe battle has begun!");
-        while(end == false)
+        attack = attack-weapon.getAttackBonus();
+        defense = defense - weapon.getDefenseBonus();
+        weapon = newWeapon;
+        attack = attack + newWeapon.getAttackBonus();
+        defense = defense + newWeapon.getDefenseBonus();
+        magicList.set(0,newWeapon.magic());
+    }
+    
+    public void addMagic(Magic newMagic)
+    {
+        magicList.add(newMagic);
+    }
+    public void addItem(Item newItem)
+    {
+        boolean equals = 0;
+        for(int i = 0; i<itemList.length; i++)
         {
-        System.out.printf("%-30s|",name);
-        System.out.printf("%30s", opponent.getName());
-        System.out.println();
-        System.out.printf("-------------------------------------------------------------");
-        System.out.println();
-        System.out.printf("%-30s|","Health:"+health);
-        System.out.printf("%30s", "Health:"+opponent.getHealth());
-        System.out.println();
-        System.out.printf("%-30s|","Attack:"+attack);
-        System.out.printf("%30s", "Attack:"+opponent.getAttack());
-        System.out.println();
-        System.out.printf("%-30s|","Defense:"+defense);
-        System.out.printf("%30s", "Defense:"+opponent.getDefense());
-        System.out.println();
-        System.out.printf("%-30s|","Magic:"+magic);
-        System.out.printf("%30s", "Magic:"+opponent.getMagic());
-        System.out.println();
-        System.out.printf("%-30s|","Speed:"+speed);
-        System.out.printf("%30s", "Speed:"+opponent.getSpeed());
-        System.out.println();
-        System.out.printf("%-30s|","Intelligence:"+intelligence);
-        System.out.printf("%30s", "Intelligence:"+opponent.getIntelligence());
-        System.out.println("What would you like to do?\n1. Attack\n2. Magic\n3. Potion/Item\n4. Run")
-        int answer = in.nextInt();
-        System.out.print('u000c');
-        if(answer == 1)
-        {
-            System.out.printf(name+" used "+weapon.getName()+"!\n");
-            if(10>attack-opponent.getDefense())
+            if(itemList[i].getName().equals("<Empty>"))
             {
-                System.out.println("It's not very effective...")
+                itemList[i]=newItem;
+                i=itemList.length+1;
+                equals++;
             }
-            else if(70>attack-opponent.getDefense())
-            {
-                System.out.println("The attack worked")
-            }
-            else
-            {
-                System.out.println("It's extremely effective!")
-            }
+            
         }
-        if(answer == 2)
+        if(equals==0)
         {
-            System.out.printf(name+" used "+magic.getName()+"!\n");
-            if(10>attack-opponent.getDefense())
-            {
-                System.out.println("It's not very effective...")
-            }
-            else if(70>attack-opponent.getDefense())
-            {
-                System.out.println("The attack worked")
-            }
-            else
-            {
-                System.out.println("It's extremely effective!")
-            }
-        }
-        if(answer == 3)
-        {
-            System.out.printf(name+" used "+item.getName()+"!\n");
-            if(10>attack-opponent.getDefense())
-            {
-                System.out.println("It's not very effective...")
-            }
-            else if(70>attack-opponent.getDefense())
-            {
-                System.out.println("The attack worked")
-            }
-            else
-            {
-                System.out.println("It's extremely effective!")
-            }
-        }
-        if(answer == 4)
-        {
-            System.out.println("You ran away");
-        }
+            System.out.println("Whoops! Your item inventory is full.")
         }
     }
+    public void removeItem(String name)
+    {
+        
+    }
+    
 }
     }
