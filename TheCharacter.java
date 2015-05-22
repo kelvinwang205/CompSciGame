@@ -30,7 +30,7 @@ public class TheCharacter
 
     Weapon weapon;
 
-    Item[] itemList = {new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),new Item("<Empty>","<Empty>"),};
+    Arraylist<Item> itemList = new Arraylist<>;
 
     Arraylist<Magic> magicList = new Arraylist<>;
 
@@ -183,25 +183,7 @@ public class TheCharacter
     }
     public void addItem(Item newItem)
     {
-        boolean equals = 0;
-        for(int i = 0; i<itemList.length; i++)
-        {
-            if(itemList[i].getName().equals("<Empty>"))
-            {
-                itemList[i]=newItem;
-                i=itemList.length+1;
-                equals++;
-            }
-            
-        }
-        if(equals==0)
-        {
-            System.out.println("Whoops! Your item inventory is full.")
-        }
-    }
-    public void removeItem(String name)
-    {
-        
+       itemList.add(newItem);
     }
     
 }
