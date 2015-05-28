@@ -20,7 +20,7 @@ public class Chapter1 implements Phase
     System.out.print('\u000C');
     System.out.println("You wake up with your eyes blurry and head spinning. Some party you had last night.");
     System.out.println("Faint sounds of a speaking voice can be heard. You lift your head to see a terrifying mustache and five o'clock shadow.");
-    System.out.println("You're in a one-room, wooden schoolhouse at De Troit High of the mythical low countries of De Troit. Your teacher stares you down.");
+    System.out.println("You're in a one-room, wooden schoolhouse of De Troit High of the mythical low countries of De Troit. Your teacher stares you down.");
     System.out.println(character.getName()+", do you have an answer to my question?\n1.Yes\n2.No\n3.C");
     int answer = in.nextInt();
     while(whileEnd==0)
@@ -49,9 +49,11 @@ public class Chapter1 implements Phase
       }
       else
       {
-        System.out.println("Choose one of the number")
+        System.out.println("Choose one of the number options.");
       }
+      
     }
+    System.out.println("")
     
     
     
