@@ -1,4 +1,3 @@
-
 /**
  * Weapon held by the character
  * 
@@ -43,7 +42,7 @@ public class Weapon
     }
     public boolean getRange()
     {
-        return ranged
+        return ranged;
     }
     public int getIntelligenceReq()
     {
@@ -51,6 +50,6 @@ public class Weapon
     }
     public int getDefense()
     {
-        return defense;
+        return defenseBonus;
     }
 }
