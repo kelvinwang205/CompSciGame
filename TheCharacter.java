@@ -1,4 +1,4 @@
-import java.util.Arraylist;
+import java.util.ArrayList;
 
 /**
  * Check
@@ -30,26 +30,25 @@ public class TheCharacter
 
     Weapon weapon;
 
-    Arraylist<Item> itemList = new Arraylist<>;
+    ArrayList<Item> itemList = new ArrayList<>();
 
-    Arraylist<Magic> magicList = new Arraylist<>;
+    ArrayList<Magic> magicList = new ArrayList<>();
 
-    Potion[] potionBelt = new Potion[3];
 
     /**
      * Constructor for objects of class Character
      */
-    public Character(String n, int h, int a, int d, int m, int s, int i, Weapon newWeapon)
+    public TheCharacter(String n, int h, int a, int d, int m, int s, int i, Weapon newWeapon)
     {
         name = n;
         health = h;
-        attack = a + newWeapon.getAttackBonus();
-        defense = d + newWeapon.getDefenseBonus();
+        attack = a + newWeapon.getAttack();
+        defense = d + newWeapon.getDefense();
         magic = m;
         speed = s;
         intelligence = i;
         currentHealth = h;
-        magicList.add(newWeapon.magic());
+        magicList.add(newWeapon.getMagic());
     }
 
     /**
@@ -155,13 +154,13 @@ public class TheCharacter
         System.out.printf("Weapon:"+weapon.getName()+"\n");
         System.out.printf("Description:"+weapon.getDescription()+"\n");
         System.out.printf("Ranged:"+weapon.getRange()+"\n");
-        System.out.printf("Items:\n")
+        System.out.printf("Items:\n");
 
-        for(int i = 0; i<itemInventory.length; i++ )
+        for(int i = 0; i<itemList.size(); i++ )
         {
-            System.out.println(itemInventory[i].getName()+": "+itemInventory[i].getDescription());
+            System.out.println(itemList.get(i).getName()+": "+itemList.get(i).getDescription());
         }
-        System.out.printf("Magic:\n")
+        System.out.printf("Magic:\n");
         for(int i = 0; i<magicList.size(); i++ )
         {
             System.out.println(magicList.get(i).getName()+": "+magicList.get(i).getDescription());
@@ -169,12 +168,12 @@ public class TheCharacter
     }
     public void replaceWeapon(Weapon newWeapon)//magicList must have a Magic object already
     {
-        attack = attack-weapon.getAttackBonus();
-        defense = defense - weapon.getDefenseBonus();
+        attack = attack-weapon.getAttack();
+        defense = defense - weapon.getDefense();
         weapon = newWeapon;
-        attack = attack + newWeapon.getAttackBonus();
-        defense = defense + newWeapon.getDefenseBonus();
-        magicList.set(0,newWeapon.magic());
+        attack = attack + newWeapon.getAttack();
+        defense = defense + newWeapon.getDefense();
+        magicList.set(0,newWeapon.getMagic());
     }
     
     public void addMagic(Magic newMagic)
@@ -187,4 +186,3 @@ public class TheCharacter
     }
     
 }
-    }
