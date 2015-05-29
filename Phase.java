@@ -12,7 +12,5 @@ public interface Phase
      * @param  y    a sample parameter for a method
      * @return        the result produced by sampleMethod 
      */
-    Phase input(int y);
-    
-    void execute();
+    Phase execute(TheCharacter character);
 }
